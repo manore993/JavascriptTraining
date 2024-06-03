@@ -34,6 +34,25 @@
     let actual = MAX-13;
     let percentage = actual/MAX;
     console.log(percentage);
+
+    // Assignment functions
+    function add7(number) {
+        return number+7;
+    }
+    function multiply(number1, number2) {
+        return number1*number2;
+    }
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+    }
+    function returnLastLettre(string) {
+        let stringLength = string.length;
+        return string.charAt(stringLength-1);
+    }
+    console.log(add7(100));
+    console.log(multiply(100,100));
+    console.log(capitalizeFirstLetter("serge"));
+    console.log(returnLastLettre("Aishwarya"));
   </script>
 </body>
 </html>
