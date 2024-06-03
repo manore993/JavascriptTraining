@@ -1,3 +1,9 @@
+function getHumanChoice(){
+    return prompt ("Please enter your choice? (Rock/Paper/Scissor)");
+}
+let humanChoice=getHumanChoice()
+console.log(humanChoice);
+
 function getComputerChoice(min, max){
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
@@ -6,17 +12,37 @@ function getComputerChoice(min, max){
 
 let computerChoice = getComputerChoice(0,2)
 if (computerChoice == 0) {
-    console.log("Rock");
+    computerChoice = "Rock";
+    // console.log("Rock");
 } else if (computerChoice == 1) {
-    console.log("Paper");
+    computerChoice = "Paper";
+    // console.log("Paper");
 } else {
-    console.log("Scissor");
+    computerChoice = "Scissor";
+    // console.log("Scissor");
 }
 
-function getHumanChoice(){
-    return prompt ("Please enter your choice? (Rock/Paper/Scissor)");
-}
-let humanChoice=getHumanChoice()
-console.log(humanChoice);
+
 
 let humanScore = 0, computerScore = 0;
+
+function playRound(humanChoice, computerChoice){
+    humanChoice.toLowerCase();
+    computerChoice.toLowerCase();
+    if (humanChoice == "rock" & computerChoice == "paper"){
+        console.log("You lose! Paper beats rock.");
+        computerScore = computerScore + 1;
+    } else if (humanChoice == "paper" & computerChoice == "scissor"){
+        console.log("You lose! Scissor beats paper.");
+        computerScore = computerScore + 1;
+    } else if (humanChoice == "scissor" & computerChoice == "rock"){
+        console.log("You lose! Rock beats scissor.");
+        computerScore = computerScore + 1;
+    } else {
+        console.log("You win!");
+        humanScore = humanScore + 1;
+    }
+    console.log("Your score:" + humanScore + " My score:"+computerScore)
+}
+
+playRound(humanChoice, computerChoice);
