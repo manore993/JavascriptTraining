@@ -13,3 +13,8 @@ if (computerChoice == 0) {
     console.log("Scissor");
 }
 
+function getHumanChoice(){
+    return prompt ("Please enter your choice? (Rock/Paper/Scissor)");
+}
+let humanChoice=getHumanChoice()
+console.log(humanChoice);
