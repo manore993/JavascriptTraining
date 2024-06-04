@@ -1,5 +1,10 @@
 function getHumanChoice(){
-    return prompt ("Please enter your choice? (Rock/Paper/Scissor)");
+    let humanChoice = "";
+    while ((humanChoice != "rock" &&  humanChoice != "paper" && humanChoice != "scissor")) {
+        humanChoice = prompt ("Please enter your choice? (Rock/Paper/Scissor)");
+        humanChoice = humanChoice.toLowerCase();
+    } 
+    return humanChoice;
 }
 // let humanChoice=getHumanChoice()
 // console.log(humanChoice);
