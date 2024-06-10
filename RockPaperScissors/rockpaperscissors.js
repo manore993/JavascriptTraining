@@ -1,3 +1,23 @@
+// selects the #container div 
+const container = document.querySelector("#container");
+
+// creates a new div referenced in the variable content
+const content = document.createElement("div");
+
+// adds a class and some text to the content div
+content.classList.add("content");
+content.textContent = "This is the glorious text-content!";
+
+// appends that div to container
+container.appendChild(content);
+
+
+
+
+
+
+
+
 function getHumanChoice(){
     let humanChoice = "";
     while ((humanChoice != "rock" &&  humanChoice != "paper" && humanChoice != "scissor")) {
