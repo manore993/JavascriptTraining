@@ -8,5 +8,7 @@ const repeatString = function(text, count) {
     return result;
 };
 
+// to try commit from gitpod.io
+
 // Do not edit below this line
 module.exports = repeatString;
