@@ -1,60 +1,73 @@
-// selects the #container div (don't worry about the syntax, we'll get there)
+// selects the #container div 
 const container = document.querySelector("#container");
+// buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll("button");
 
-// selects the first child of #container => .display
-console.dir(container.firstElementChild);
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        alert(button.id);
+    })
+})
 
-// selects the .controls div
-const controls = document.querySelector(".controls");
+// creates a new div referenced in the variable content
+const content0 = document.createElement("div");
+// adds a class and some text to the content div
+content0.classList.add("content0");
+content0.textContent = "This is the glorious text-content!";
+// appends that div to container
+container.appendChild(content0);
 
-// selects the prior sibling => .display
-console.dir(controls.previousElementSibling);
+const content1 = document.createElement("p");
+content1.classList.add("content1");
+content1.textContent = "Hey I'm red!";
+container.appendChild(content1);
 
-// creates a new div referenced in the variable 'div'
-const div = document.createElement("div");
+const content2 = document.createElement("h3");
+content2.classList.add("content2");
+content2.textContent = "I'm a blue h3!";
+container.appendChild(content2);
 
-// adds the indicated style rule to the element in the div variable
-div.style.color = "blue";
+const content3 = document.createElement("div");
+content3.classList.add("content3");
+content3.setAttribute("style", "border : solid 1px black; background : pink");
+    
+    const content4 = document.createElement("h1");
+    content4.classList.add("content4");
+    content4.textContent = "I'm in a div of content3!";
+    content3.appendChild(content4);
+    
+    const content5 = document.createElement("p");
+    content5.classList.add("content5");
+    content5.textContent = "ME TOO!";
+    content3.appendChild(content5);
 
-// adds several style rules
-div.style.cssText = "color: blue; background: white;";
+container.appendChild(content3);
 
-// adds several style rules
-div.setAttribute("style", "color: blue; background: white;");
+function alertFunctionButton3() {
+    alert("Button3");
+}
 
-// dot notation with kebab case: doesn't work as it attempts to subtract color from div.style.background
-// equivalent to: div.style.background - color
-div.style.background-color;
+const button1 = document.querySelector("#button1");
+button1.onclick = () => alert("Button1");
 
-// dot notation with camelCase: works, accesses the div's background-color style
-div.style.backgroundColor;
+const button4 = document.querySelector("#button4")
+button4.onclick =  alertFunctionButton4;
+function alertFunctionButton4() {
+    alert ("Button4")
+}
 
-// bracket notation with kebab-case: also works
-div.style["background-color"];
+const button2 = document.querySelector("#button2");
+button2.addEventListener("click", () => {alert("Button2");});
 
-// bracket notation with camelCase: also works
-div.style["backgroundColor"];
+const button5 = document.querySelector("#button5")
+button5.addEventListener("click", alertFunctionButton5);
+function alertFunctionButton5() {
+    alert ("Button5"); 
+}
 
-//if id exists, update it to 'theDiv', else create an id with value "theDiv"
-div.setAttribute("id", "theDiv");
-
-// returns value of specified attribute, in this case "theDiv"
-div.getAttribute("id");
-
-// removes specified attribute
-div.removeAttribute("id");
-
-// adds class "new" to your new div
-div.classList.add("new");
-
-// removes "new" class from div
-div.classList.remove("new");
-
-// if div doesn't have class "active" then add it, or if it does, then remove it
-div.classList.toggle("active");
-
-// creates a text node containing "Hello World!" and inserts it in div
-div.textContent = "Hello World!";
-
-//renders the HTML inside div
-div.innerHTML = "<span>Hello World!</span>"
+const button6 = document.querySelector("#button6");
+button6.addEventListener("click", function (e) {
+    console.log(e);
+    console.log(e.target);
+    e.target.style.background = "blue"; 
+});
