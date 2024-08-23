@@ -1,0 +1,6 @@
+Asset; Quantity; Price; Side
+Apple; 5; 200; Buy
+Microsoft; 10; 400; Buy
+Apple; 5; 210; Sell
+Microsoft; 5; 390; Sell
+Microdoft; 5; 402; Sell
